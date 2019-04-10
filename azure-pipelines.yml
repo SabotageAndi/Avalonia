@@ -7,7 +7,8 @@ jobs:
     displayName: 'Downgrade Mono'
     inputs:
       script: |
-        echo "deb https://download.mono-project.com/repo/ubuntu stable-xenial/snapshots/5.18.0.225/ main" | sudo tee /etc/apt/sources.list.d/mono-official-stable.list
+        ls /etc/apt/sources.list.d/
+        echo "deb https://download.mono-project.com/repo/ubuntu stable-xenial/snapshots/5.18.0.225 main" | sudo tee /etc/apt/sources.list.d/mono-official-stable.list
         sudo apt-get update
         sudo apt-get install -y mono-runtime:5.18.0.225
   - task: CmdLine@2
